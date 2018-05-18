@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/blueLight"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cricket score\ncounter"
+        android:textSize="40dp"
+        android:gravity="center"
+        android:fontFamily="@font/nunito_extrabold"
+        android:layout_marginTop="20dp" />
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+    <Button
+        android:background="@drawable/button_regular"
+        style="@style/StyleForLauncherButton"
+        android:id="@+id/start_new_match"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start new match" />
+
+    <Button
+        android:background="@drawable/button_regular"
+        style="@style/StyleForLauncherButton"
+        android:id="@+id/load_match"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load match" />
+    </LinearLayout>
+
+</LinearLayout>

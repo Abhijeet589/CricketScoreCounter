@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@color/blueLight">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/blueDark"
+            android:text="How many overs?: "/>
+
+        <Spinner
+            android:id="@+id/spinner_overs"
+            android:layout_width="wrap_content"
+            android:maxLength="30"
+            android:textColor="@color/blueDark"
+            android:minWidth="100dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <CheckBox
+        android:layout_marginTop="10dp"
+        android:id="@+id/checkbox_default_player_names"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@color/blueDark"
+        android:text="Use default player names"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Ok"
+            android:background="@drawable/button_regular"
+            android:id="@+id/ok_button"/>
+
+    </LinearLayout>
+
+</LinearLayout>

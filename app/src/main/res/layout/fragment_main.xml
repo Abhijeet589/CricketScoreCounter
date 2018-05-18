@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:ad="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainFragment"
+    android:background="@color/blueLight">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/nunito_extrabold"
+                android:gravity="center"
+                android:text="Score: "
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/runs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_extrabold"
+                android:text="0"
+                android:textSize="40sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_extrabold"
+                android:text="/"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/wickets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_extrabold"
+                android:text="0"
+                android:textSize="40sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/nunito_extrabold"
+                android:gravity="center"
+                android:text=" in "
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/balls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_extrabold"
+                android:text="0"
+                android:textSize="40sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/nunito_extrabold"
+                android:gravity="center"
+                android:text=" overs"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+            <!--ONE-->
+            <LinearLayout
+                android:id="@+id/run_rate_ll"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/run_rate_tv"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:text="Run rate: "/>
+            </LinearLayout>
+                <!--TWO-->
+            <LinearLayout
+                android:visibility="gone"
+                android:orientation="horizontal"
+                android:id="@+id/last_balls"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_height="match_parent">
+
+            </LinearLayout>
+
+            <!--THREE-->
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/fours_and_sixes"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/fours_tv"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:text="Fours"/>
+                <TextView
+                    android:id="@+id/sixes_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="Sixes"/>
+                <TextView
+                    android:id="@+id/extras_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="Extras"/>
+            </LinearLayout>
+            <ImageView
+                android:src="@drawable/ic_undo_white_24dp"
+                android:id="@+id/undo_btn"
+                style="@style/StyleForRegularButton"
+                android:background="@drawable/button_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Undo" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp">
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/match_ended_view"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_margin="20dp"
+            android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blueDark"
+            android:text="Match Ended"
+            android:textSize="30dp">
+        </TextView>
+            <Button
+                android:id="@+id/view_scoreboard_btn"
+                style="@style/StyleForRegularButton"
+                android:background="@drawable/button_regular"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View full scoreboard"/>
+
+        </LinearLayout>
+    <TableLayout
+        android:id="@+id/buttons_layout"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:id="@+id/other_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/dot_ball"
+                style="@style/StyleForRegularButton"
+                android:background="@drawable/button_regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dot" />
+
+            <Button
+                android:id="@+id/one_run"
+                style="@style/StyleForRegularButton"
+                android:background="@drawable/button_regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="+1" />
+
+            <Button
+                android:id="@+id/two_runs"
+                style="@style/StyleForRegularButton"
+                android:background="@drawable/button_regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="+2" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/runs_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/three_runs"
+                style="@style/StyleForRegularButton"
+                android:background="@drawable/button_regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="+3" />
+
+
+            <Button
+                android:id="@+id/four_runs"
+                style="@style/StyleForRegularButton"
+                android:background="@drawable/button_regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="+4" />
+
+
+            <Button
+                android:id="@+id/six_runs"
+                style="@style/StyleForRegularButton"
+                android:background="@drawable/button_regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="+6" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/no_ball"
+                style="@style/StyleForRegularButton"
+                android:background="@drawable/button_regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="No ball"
+                android:textSize="13sp" />
+
+
+            <Button
+                android:id="@+id/wide_ball"
+                style="@style/StyleForRegularButton"
+                android:background="@drawable/button_regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Wide" />
+
+
+            <Button
+                android:id="@+id/out_btn"
+                style="@style/StyleForRegularButton"
+                android:background="@drawable/button_regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="out" />
+
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scoreboard"
+        android:gravity="center"
+        android:fontFamily="@font/nunito_extrabold"
+        android:textSize="40sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <!--<TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="@color/blueDark"
+                android:layout_weight="0.2"
+                android:text="#"
+                />-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="@color/blueDark"
+                android:layout_weight="2"
+                android:text="Name"/>
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="@color/blueDark"
+                android:layout_weight="1"
+                android:text="Runs"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="@color/blueDark"
+                android:layout_weight="1"
+                android:text="Balls"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="@color/blueDark"
+                android:layout_weight="1"
+                android:text="4's"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="@color/blueDark"
+                android:layout_weight="1"
+                android:text="6's"/>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp">
+        <!--<TextView
+            android:id="@+id/p1indicator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/blueDark"
+            android:layout_weight="0.2" />-->
+        <TextView
+            android:id="@+id/p1name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/blueDark"
+            android:layout_weight="2" />
+        <TextView
+            android:id="@+id/p1runs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/blueDark"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/p1balls"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/blueDark"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/p1fours"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/blueDark"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/p1sixes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/blueDark"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+        <!--<TextView
+            android:id="@+id/p2indicator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/blueDark"
+            android:layout_weight="0.2" />-->
+        <TextView
+            android:id="@+id/p2name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/blueDark"
+            android:layout_weight="2" />
+        <TextView
+            android:id="@+id/p2runs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/blueDark"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/p2balls"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/blueDark"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/p2fours"
+            android:layout_width="0dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/blueDark"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/p2sixes"
+            android:layout_width="0dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/blueDark"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/go_to_scoreboard_btn"
+        style="@style/StyleForRegularButton"
+        android:background="@drawable/button_regular"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View full scoreboard"/>
+    </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-6229326724546843/7021799071"/>
+</LinearLayout>
